@@ -1,35 +1,68 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { AppContext } from '../Context/AppContext';
 import { Signup } from './Signup';
 import './Homepage.css'; // Add styles for the homepage
+import LocationComponent from './LocationComponent';
 
 export const Homepage = () => {
 
   const { state, dispatch } = useContext(AppContext);
 
+  const useDeviceType = () => {
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+      const mediaQuery = window.matchMedia("(max-width: 768px)");
+      setIsMobile(mediaQuery.matches);
+
+      const handleResize = () => setIsMobile(mediaQuery.matches);
+      mediaQuery.addEventListener("change", handleResize);
+
+      return () => mediaQuery.removeEventListener("change", handleResize);
+    }, []);
+
+    return isMobile ? "Mobile" : "Desktop";
+  };
+
   return (
-    <div className="homepage">
-        {/* Fixed Header */}
-        <header className="fixed-header">
-        <div className="header-container">
-          <div className='left-header'> 
-            Open Soakify App For Better Experience.
-          </div>
-          <div className='right-header'>
-          <a href="#" className="open-app-button">Open App</a>
-          </div>
-         
-        </div>
-      </header>
+    <div className={`${state.device === "Mobile" ? "heading_pad" : ""} homepage`}>
+      {/* Fixed Header */}
+      {
+        state.device === "Mobile" ?
+          <header className="fixed-header">
+            <div className="header-container">
+              <div className='left-header'>
+                Open Soakify App For Better Experience.
+              </div>
+              <div className='right-header'>
+                <a href="#" className="open-app-button">Open App</a>
+              </div>
+
+            </div>
+          </header> : null}
+
 
       {/* Header Section */}
       <header className="homepage-header">
-        <div className="container">
-          <h1 className="brand-name">Soakify</h1>
-          <p className="tagline">Simplify Laundry, Amplify Life.</p>
-          <button className="cta-button">Get Started</button>
+        <div className={state.device !== "Mobile"?"homepage-container":""}>
+          <div className="header-left">
+            <h1 className="brand-name">Soakify</h1>
+            <p className="tagline">Simplify Laundry, Amplify Life.</p>
+            {/* <LocationComponent/> */}
+          </div>
+          { state.device !== "Mobile" ?
+          <div className="header-right">
+            <nav>
+              <ul className="menu">
+                <li><a href="/partner">Partner with Us</a></li>
+                <li><a href="/careers">Careers</a></li>
+                <li><a href="/signin">Sign In</a></li>
+              </ul>
+            </nav>
+          </div>: null }
         </div>
       </header>
+
 
       {/* Features Section */}
       <section className="features">

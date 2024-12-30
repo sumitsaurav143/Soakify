@@ -35,7 +35,7 @@
   border-radius: 5px;
   text-decoration: none;
   cursor: pointer;
-  margin-right: 5px;
+  margin-right: 15px;
 }
 
 .open-app-button:hover {
@@ -43,7 +43,7 @@
   color: black;
 }
 
-.homepage {
+.heading_pad {
   padding-top: 60px; /* Prevent content from being hidden under the fixed header */
 }
 
@@ -65,23 +65,54 @@
   }
   
   .tagline {
-    font-size: 1.5rem;
+    font-size: 1rem;
     margin: 10px 0;
   }
   
-  .cta-button {
-    background-color: #0ea5e9; /* Bright blue */
-    color: #fff;
-    border: none;
-    padding: 15px 30px;
-    font-size: 1rem;
-    border-radius: 5px;
-    cursor: pointer;
+  .homepage-header {
+    padding: 20px 0;
   }
   
-  .cta-button:hover {
-    background-color: #0284c7; /* Darker blue on hover */
+  .homepage-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
   }
+  
+  .header-left {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .brand-name {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  
+  .header-right {
+    display: flex;
+    align-items: center;
+  }
+  
+  .menu {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+  }
+  
+  .menu li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 500;
+  }
+  
+  .menu li a:hover {
+    color: #007bff; /* Add hover color for links */
+  }  
   
   /* Features Section */
   .features {
