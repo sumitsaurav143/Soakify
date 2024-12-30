@@ -1,0 +1,177 @@
+/* Homepage.css */
+
+/* Fixed Header */
+.fixed-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #050e27; /* Dark blue background */
+  color: #fff;
+  z-index: 1000; /* Ensure it stays above other elements */
+  padding: 10px 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for better visibility */
+}
+
+.fixed-header .header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.fixed-header .right-header{
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.open-app-button {
+  background-color: #0ea5e9; /* Bright blue button */
+  color: #fff;
+  border: none;
+  padding: 10px 12px;
+  font-size: 1rem;
+  border-radius: 5px;
+  text-decoration: none;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+.open-app-button:hover {
+  background-color: #ffffff; /* Darker blue on hover */
+  color: black;
+}
+
+.homepage {
+  padding-top: 60px; /* Prevent content from being hidden under the fixed header */
+}
+
+  .homepage {
+    text-align: center;
+    width: 100vw;
+  }
+  
+  /* Header Section */
+  .homepage-header {
+    background-color: #1e3a8a; /* Dark blue background */
+    color: #fff;
+    padding: 50px 20px;
+  }
+  
+  .brand-name {
+    font-size: 3rem;
+    margin: 0;
+  }
+  
+  .tagline {
+    font-size: 1.5rem;
+    margin: 10px 0;
+  }
+  
+  .cta-button {
+    background-color: #0ea5e9; /* Bright blue */
+    color: #fff;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .cta-button:hover {
+    background-color: #0284c7; /* Darker blue on hover */
+  }
+  
+  /* Features Section */
+  .features {
+    background-color: #f9f9f9; /* Light gray */
+    padding: 50px 20px;
+  }
+  
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+  }
+  
+  .feature-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .feature-item img {
+    width: 50px;
+    margin-bottom: 10px;
+  }
+  
+  /* How It Works Section */
+  .how-it-works {
+    background-color: #e0f2fe; /* Light blue */
+    padding: 50px 20px;
+  }
+  
+  .steps {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+  
+  .step {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+  }
+  
+  .step-number {
+    background-color: #0ea5e9; /* Bright blue */
+    color: #fff;
+    font-size: 1.5rem;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 10px;
+  }
+  
+  /* Testimonials Section */
+  .testimonials {
+    padding: 50px 20px;
+  }
+  
+  .testimonial {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px auto;
+    max-width: 500px;
+  }
+  
+  /* Call to Action Section */
+  .call-to-action {
+    background-color: #1e3a8a; /* Dark blue */
+    color: #fff;
+    padding: 50px 20px;
+  }
+  
+  .call-to-action .cta-button {
+    background-color: #0ea5e9; /* Bright blue */
+    margin-top: 20px;
+  }
+  
+  /* Footer Section */
+  .footer {
+    background-color: #1e3a8a; /* Dark blue */
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+  }
+  
