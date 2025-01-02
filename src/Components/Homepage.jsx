@@ -54,17 +54,17 @@ export const Homepage = () => {
           <h2>Why Choose Soakify?</h2>
           <div className="features-grid">
             <div className="feature-item">
-              <img className="service_svg" src="./src/assets/quick_service.svg" alt="Quick Service" />
+              <img className="service_svg" src="/Soakify/images/quick_service.svg" alt="Quick Service" />
               <h3>Quick Service</h3>
               <p>Experience same-day pickup and delivery for your convenience.</p>
             </div>
             <div className="feature-item">
-            <img className="service_svg" src="./src/assets/ecofriendly.svg" alt="Eco Friendly" />
+            <img className="service_svg" src="/Soakify/images/ecofriendly.svg" alt="Eco Friendly" />
               <h3>Eco-Friendly</h3>
               <p>We use eco-friendly detergents and sustainable practices.</p>
             </div>
             <div className="feature-item">
-            <img className="service_svg" src="./src/assets/pricing.svg" alt="Affordable Pricing" />
+            <img className="service_svg" src="/Soakify/images/pricing.svg" alt="Affordable Pricing" />
               <h3>Affordable Pricing</h3>
               <p>Quality service that won’t break the bank.</p>
             </div>
