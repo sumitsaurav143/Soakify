@@ -1,7 +1,8 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { AppContext } from '../Context/AppContext';
 import './Homepage.css'; // Add styles for the homepage
-import { AppOpener} from './AppOpener';
+import { AppOpener } from './AppOpener';
+import { Features } from './Features';
 
 export const Homepage = () => {
 
@@ -9,31 +10,31 @@ export const Homepage = () => {
 
   return (
     <div className={`${state.appOpener === 1 && state.device === "Mobile" ? "heading_pad" : ""} homepage`}>
-      
+
       {/* Fixed Header */}
-      { state.appOpener === 1  && state.device === "Mobile" ? <AppOpener/> : null}
+      {state.appOpener === 1 && state.device === "Mobile" ? <AppOpener /> : null}
 
       {/* Header Section */}
       <header className="homepage-header bubble-container">
-        <div className={state.device !== "Mobile"?"homepage-container":""}>
+        <div className={state.device !== "Mobile" ? "homepage-container" : ""}>
           <div className="header-left">
             <h1 className="brand-name">Soakify</h1>
             <p className="tagline">Simplify Laundry, Amplify Life.</p>
             {/* <p>{JSON.stringify(state)}</p> */}
             {/* <LocationComponent/> */}
           </div>
-          { state.device !== "Mobile" ?
-          <div className="header-right">
-            <nav>
-              <ul className="menu">
-                <li><a href="/partner">Partner with Us</a></li>
-                {/* <li><a href="/careers">Careers</a></li> */}
-                <li><a href="/signin">Sign Up</a></li>
-                <li><a href="/signin">Log In</a></li>
-                <li><a href="#" className="open-app-button">Get the App</a></li>
-              </ul>
-            </nav>
-          </div>: null }
+          {state.device !== "Mobile" ?
+            <div className="header-right">
+              <nav>
+                <ul className="menu">
+                  <li><a href="/partner">Partner with Us</a></li>
+                  {/* <li><a href="/careers">Careers</a></li> */}
+                  <li><a href="/signin">Sign Up</a></li>
+                  <li><a href="/signin">Log In</a></li>
+                  <li><a href="#" className="open-app-button">Get the App</a></li>
+                </ul>
+              </nav>
+            </div> : null}
         </div>
 
         <div class="bubble"></div>
@@ -47,30 +48,9 @@ export const Homepage = () => {
 
       </header>
 
+      {/* Features Section */}
+     <Features />
 
-    {/* Features Section */}
-    <section className="features">
-        <div className="container">
-          <h2>Why Choose Soakify?</h2>
-          <div className="features-grid">
-            <div className="feature-item">
-              <img className="service_svg" src="/Soakify/images/quick_service.svg" alt="Quick Service" />
-              <h3>Quick Service</h3>
-              <p>Experience same-day pickup and delivery for your convenience.</p>
-            </div>
-            <div className="feature-item">
-            <img className="service_svg" src="/Soakify/images/ecofriendly.svg" alt="Eco Friendly" />
-              <h3>Eco-Friendly</h3>
-              <p>We use eco-friendly detergents and sustainable practices.</p>
-            </div>
-            <div className="feature-item">
-            <img className="service_svg" src="/Soakify/images/pricing.svg" alt="Affordable Pricing" />
-              <h3>Affordable Pricing</h3>
-              <p>Quality service that won’t break the bank.</p>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* How It Works Section */}
       <section className="how-it-works">

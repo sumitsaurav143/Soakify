@@ -1,0 +1,137 @@
+.features {
+    padding: 30px 20px;
+    background: whitesmoke;
+    margin-bottom: 20px;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  .features-heading {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 40px;
+  }
+  
+  .features-heading span {
+    color: #4a90e2;
+  }
+  
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+  
+  .feature-item {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .feature-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  }
+  
+
+  .feature-item h3 {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  .feature-item p {
+    font-size: 1rem;
+    color: #666;
+  }  
+
+  .service_svg{
+    height: 150px;
+  }
+
+
+
+
+/* Apply auto-scrolling effect in mobile mode */
+@media (max-width: 768px) {
+/* Container for Features Section */
+.features {
+  padding: 20px;
+}
+
+/* Scroll container to enable horizontal scroll */
+ .features-scroll-container {
+  overflow-x: auto; /* Hide the horizontal scrollbar */
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+  justify-content: center;
+  position: relative;
+  scroll-behavior: smooth; /* Smooth scrolling for manual action */
+}
+
+/* Features grid to display items in a row */
+.features-grid {
+  display: flex;
+  transition: transform 0.5s ease; /* Smooth transition when moving to the next feature */
+}
+
+/* Feature item styling */
+.feature-item {
+  flex: 0 0 auto; 
+  width: 300px;
+  scroll-snap-align: center; /* Ensure each item aligns when scrolling */
+  text-align: center;
+  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.1);
+  height: 440px;
+}
+
+.feature-item img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Hide the scrollbar */
+.features-scroll-container::-webkit-scrollbar {
+  display: none;
+}
+
+/* Dots Container (Navigation dots) */
+.dots-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  gap: 10px;
+}
+
+/* Dot Styles */
+.dot {
+  width: 12px;
+  height: 12px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+}
+
+.dot.active {
+  background-color: #007bff; /* Active dot color */
+}
+
+/* Mobile-specific styles */
+@media (max-width: 768px) {
+  .features-scroll-container {
+    padding: 10px; /* Optional padding to make it look nice on mobile */
+  }
+}
+
+.feature-item:hover {
+  transform: none;
+}
+
+}
