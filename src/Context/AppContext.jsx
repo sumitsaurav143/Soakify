@@ -23,6 +23,7 @@ const initialState = {
   theme: "dark",
   cart: [],
   device: "Desktop",
+  appOpener: 1
 };
 
 const appReducer = (state, action) => {
@@ -37,6 +38,8 @@ const appReducer = (state, action) => {
       return { ...state, cart: state.cart.filter((item) => item.id !== action.payload.id) };
     case "SET_DEVICE_TYPE":
       return { ...state, device: action.payload };
+    case "SET_APP_OPENER":
+        return { ...state, appOpener: action.payload };
     default:
       return state;
   }

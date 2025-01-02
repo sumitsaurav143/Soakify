@@ -1,0 +1,49 @@
+/* Fixed Header */
+.fixed-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #050e27; /* Dark blue background */
+    color: #fff;
+    z-index: 1000; /* Ensure it stays above other elements */
+    padding: 10px 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for better visibility */
+  }
+  
+  .fixed-header .header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .fixed-header .right-header{
+    width: 65%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .close-button{
+   background-color: transparent; 
+   border-radius: none;
+   font-size: 20px;
+
+  }
+  
+  .open-app-button {
+    background-color: #0ea5e9; /* Bright blue button */
+    color: #fff;
+    border: none;
+    padding: 10px 12px;
+    font-size: 1rem;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    margin-right: 15px;
+  }
+  
+  .open-app-button:hover {
+    background-color: #ffffff; /* Darker blue on hover */
+    color: black;
+  }

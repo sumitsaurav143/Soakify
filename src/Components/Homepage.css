@@ -1,47 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Merienda:wght@300..900&display=swap');
+
 /* Homepage.css */
-
-/* Fixed Header */
-.fixed-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background-color: #050e27; /* Dark blue background */
-  color: #fff;
-  z-index: 1000; /* Ensure it stays above other elements */
-  padding: 10px 20px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for better visibility */
-}
-
-.fixed-header .header-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.fixed-header .right-header{
-  width: 40%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.open-app-button {
-  background-color: #0ea5e9; /* Bright blue button */
-  color: #fff;
-  border: none;
-  padding: 10px 12px;
-  font-size: 1rem;
-  border-radius: 5px;
-  text-decoration: none;
-  cursor: pointer;
-  margin-right: 15px;
-}
-
-.open-app-button:hover {
-  background-color: #ffffff; /* Darker blue on hover */
-  color: black;
-}
 
 .heading_pad {
   padding-top: 60px; /* Prevent content from being hidden under the fixed header */
@@ -54,17 +13,20 @@
   
   /* Header Section */
   .homepage-header {
-    background-color: #1e3a8a; /* Dark blue background */
+    background-color: #0f488d;
     color: #fff;
-    padding: 50px 20px;
   }
   
   .brand-name {
-    font-size: 3rem;
-    margin: 0;
-  }
+    font-family: "Merienda", serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
+    font-size: 50px!important;
+}
   
   .tagline {
+    font-family: "Merienda", serif;
     font-size: 1rem;
     margin: 10px 0;
   }
@@ -114,63 +76,207 @@
     color: #007bff; /* Add hover color for links */
   }  
   
-  /* Features Section */
   .features {
-    background-color: #f9f9f9; /* Light gray */
-    padding: 50px 20px;
+    padding: 30px 20px;
+    background: whitesmoke;
+    margin-bottom: 20px;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  .features-heading {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 40px;
+  }
+  
+  .features-heading span {
+    color: #4a90e2;
   }
   
   .features-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
-    margin-top: 20px;
   }
   
   .feature-item {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 10px;
+    background: #ffffff;
+    border-radius: 12px;
     padding: 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
   
-  .feature-item img {
-    width: 50px;
+  .feature-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  }
+  
+  .icon-wrapper {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 15px;
+    background-color: #4a90e2;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .icon-wrapper img {
+    width: 50%;
+    height: auto;
+  }
+  
+  .feature-item h3 {
+    font-size: 1.25rem;
     margin-bottom: 10px;
+    color: #333;
   }
   
-  /* How It Works Section */
+  .feature-item p {
+    font-size: 1rem;
+    color: #666;
+  }
+
+  .service_svg{
+    height: 150px;
+  }
+  
+  
   .how-it-works {
-    background-color: #e0f2fe; /* Light blue */
-    padding: 50px 20px;
+    padding: 60px 20px;
+    background:  #0f488d;
+
   }
   
-  .steps {
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .how-it-works-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 30px;
+  }
+  
+  .how-it-works-left {
+    flex: 1;
+    max-width: 35%;
+  }
+  
+  .how-it-works-heading {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: whitesmoke;
+    margin-bottom: 20px;
+  }
+  
+  .how-it-works-description {
+    font-size: 1.2rem;
+    color: whitesmoke;
+    line-height: 1.6;
+  }
+  
+  .how-it-works-right {
+    flex: 2;
     display: flex;
     flex-direction: column;
     gap: 30px;
   }
   
   .step {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: #fff;
     padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .step:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
   }
   
   .step-number {
-    background-color: #0ea5e9; /* Bright blue */
+    width: 60px;
+    height: 60px;
+    background:  #0f488d;
     color: #fff;
     font-size: 1.5rem;
+    font-weight: bold;
     border-radius: 50%;
-    width: 40px;
-    height: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 auto 10px;
   }
+  
+  .step-content h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin: 0 0 10px;
+  }
+  
+  .step-content p {
+    font-size: 1rem;
+    color: #666;
+    margin: 0;
+  }
+
+  /* Mobile Styles */
+@media (max-width: 768px) {
+  .how-it-works-content {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .how-it-works-left {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .how-it-works-heading {
+    font-size: 1.8rem;
+  }
+
+  .how-it-works-description {
+    font-size: 1rem;
+    margin-bottom: 20px;
+  }
+
+  .step {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+    padding: 20px;
+  }
+
+  .step-number {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+
+  .step-content h3 {
+    font-size: 1.1rem;
+  }
+
+  .step-content p {
+    font-size: 0.85rem;
+  }
+}
+  
   
   /* Testimonials Section */
   .testimonials {
@@ -206,3 +312,122 @@
     text-align: center;
   }
   
+
+.bubble-container {
+    position: relative;
+    height: 200px; /* Adjust height as needed */
+    overflow: hidden;
+    /* background: linear-gradient(135deg, #142e67, #8ec5fc); */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 24px;
+    font-family: Arial, sans-serif;
+}
+
+.bubble-container::before,
+.bubble-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0) 70%);
+    opacity: 0.5;
+    animation: float 10s infinite;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.bubble-container::after {
+    animation-delay: 5s;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(100%) scale(0.8);
+    }
+    50% {
+        transform: translateY(50%) scale(1);
+    }
+    100% {
+        transform: translateY(-100%) scale(0.8);
+    }
+}
+
+/* Individual bubble styling */
+.bubble-container .bubble {
+    position: absolute;
+    bottom: -10%;
+    width: 40px; /* Bubble size */
+    height: 40px;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 50%;
+    animation: rise 8s infinite ease-in-out;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.bubble-container .bubble:nth-child(1) {
+    left: 20%;
+    animation-duration: 6s;
+    animation-delay: 0s;
+}
+
+.bubble-container .bubble:nth-child(2) {
+    left: 40%;
+    animation-duration: 7s;
+    animation-delay: 2s;
+}
+
+.bubble-container .bubble:nth-child(3) {
+    left: 60%;
+    animation-duration: 5s;
+    animation-delay: 1s;
+}
+
+.bubble-container .bubble:nth-child(4) {
+    left: 80%;
+    animation-duration: 9s;
+    animation-delay: 3s;
+}
+
+.bubble-container .bubble:nth-child(5) {
+  left: 20%;
+  animation-duration: 6s;
+  animation-delay: 0s;
+}
+
+.bubble-container .bubble:nth-child(6) {
+  left: 40%;
+  animation-duration: 7s;
+  animation-delay: 2s;
+}
+
+.bubble-container .bubble:nth-child(7) {
+  left: 60%;
+  animation-duration: 5s;
+  animation-delay: 1s;
+}
+
+.bubble-container .bubble:nth-child(8) {
+  left: 80%;
+  animation-duration: 9s;
+  animation-delay: 3s;
+}
+
+@keyframes rise {
+    0% {
+        transform: translateY(100%) scale(0.6);
+        opacity: 0.4;
+    }
+    50% {
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateY(-100%) scale(1);
+        opacity: 0;
+    }
+}
