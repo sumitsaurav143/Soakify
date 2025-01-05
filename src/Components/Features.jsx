@@ -8,17 +8,17 @@ export const Features = () => {
 
   const featureItems = [
     {
-      img: '/Soakify/images/quick_service.svg',
+      img: '/images/quick_service.svg',
       title: 'Quick Service',
       description: 'Experience same-day pickup and delivery for your convenience.',
     },
     {
-      img: '/Soakify/images/ecofriendly.svg',
+      img: '/images/ecofriendly.svg',
       title: 'Eco-Friendly',
       description: 'We use eco-friendly detergents and sustainable practices.',
     },
     {
-      img: '/Soakify/images/pricing.svg',
+      img: '/images/pricing.svg',
       title: 'Affordable Pricing',
       description: 'Quality service that won’t break the bank.',
     },
