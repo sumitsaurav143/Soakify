@@ -6,6 +6,21 @@ export const Features = () => {
 
     const { state, dispatch } = useContext(AppContext);
 
+    useEffect(() => {
+      const script = document.createElement("script");
+      script.src = "https://udbaa.com/bnr.php?section=General&pub=395968&format=728x90&ga=g"
+      script.async = true;
+      script.onload = () => {
+        // You can do something once the script is loaded
+        console.log("Script loaded successfully!");
+      };
+      document.body.appendChild(script);
+  
+      return () => {
+        document.body.removeChild(script); // Clean up the script on unmount
+      };
+    }, []);
+
   const featureItems = [
     {
       img: '/images/quick_service.svg',

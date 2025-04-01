@@ -3,6 +3,7 @@ import { AppContext } from '../Context/AppContext';
 import './Homepage.css'; // Add styles for the homepage
 import { AppOpener } from './AppOpener';
 import { Features } from './Features';
+import { Link, Outlet } from "react-router-dom";
 
 export const Homepage = () => {
 
@@ -27,33 +28,30 @@ export const Homepage = () => {
             <div className="header-right">
               <nav>
                 <ul className="menu">
-                  <li><a href="/partner">Partner with Us</a></li>
-                  {/* <li><a href="/careers">Careers</a></li> */}
-                  <li><a href="/signin">Sign Up</a></li>
-                  <li><a href="/signin">Log In</a></li>
-                  <li><a href="#" className="open-app-button">Get the App</a></li>
+                  <Link to="/partner" >Partner with Me</Link>
+                  <Link to="/signin" >SignIn</Link>
+                  <Link to="/signup" >SignUp</Link>
+                  <Link to="/admin" >Admin</Link>
+                  <Link to="/home" onClick={() => window.location.href = "https://vdbaa.com/fullpage.php?section=General&pub=395968&ga=g"}>Get the App</Link>
                 </ul>
               </nav>
             </div> : null}
         </div>
 
-        <div class="bubble"></div>
-        <div class="bubble"></div>
-        <div class="bubble"></div>
-        <div class="bubble"></div>
-        <div class="bubble"></div>
-        <div class="bubble"></div>
-        <div class="bubble"></div>
-        <div class="bubble"></div>
+        <div className="bubble"></div>
+        <div className="bubble"></div>
+        <div className="bubble"></div>
+        <div className="bubble"></div>
+        <div className="bubble"></div>
+        <div className="bubble"></div>
+        <div className="bubble"></div>
+        <div className="bubble"></div>
 
       </header>
 
 
-<noscript><a href="https://yllix.com/publishers/395968" target="_blank"><img src="//ylx-aff.advertica-cdn.com/pub/728x90.png" style="border:none;margin:0;padding:0;vertical-align:baseline;" alt="ylliX - Online Advertising Network" /></a></noscript>
-
       {/* Features Section */}
-     <Features />
-
+      <Features />
 
       {/* How It Works Section */}
       <section className="how-it-works">
@@ -61,7 +59,7 @@ export const Homepage = () => {
           <div className="how-it-works-content">
             {/* Left Side: Title */}
             <div className="how-it-works-left">
-              <h2 className="how-it-works-heading">How It Works</h2>
+              <h2 className="how-it-works-heading">How It Works?</h2>
               <p className="how-it-works-description">
                 We make laundry simple and hassle-free. Just follow these three easy steps to enjoy clean clothes without the effort!
               </p>
@@ -117,9 +115,15 @@ export const Homepage = () => {
       <section className="call-to-action">
         <div className="container">
           <h2>Ready to Experience Hassle-Free Laundry?</h2>
-          <button className="cta-button">Sign Up Now</button>
+          <button
+            className="cta-button"
+            onClick={() => window.location.href = "https://vdbaa.com/fullpage.php?section=General&pub=395968&ga=g"}
+          >
+            Sign Up Now
+          </button>
         </div>
       </section>
+
 
       {/* Footer Section */}
       <footer className="footer">
@@ -130,4 +134,3 @@ export const Homepage = () => {
     </div>
   );
 };
-

@@ -1,0 +1,129 @@
+/* Light & Dark Mode */
+.dashboard {
+  display: flex;
+  min-height: 100vh;
+  min-width: 100vw;
+  background-color: #f4f4f4;
+  color: #1a202c;
+}
+
+.dark-mode {
+  background-color: #1a202c;
+  color: white;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 250px;
+  background-color: #1e3a8a;
+  color: white;
+  padding: 20px;
+}
+
+.sidebar h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: whitesmoke;
+}
+
+.sidebar ul {
+  margin-top: 20px;
+  list-style-type: none;
+  padding: 0;
+}
+
+.sidebar li {
+  padding: 12px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.sidebar li:hover {
+  background-color: #2563eb;
+}
+
+/* Main Content */
+.main-content {
+  flex: 1;
+  padding: 20px;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.toggle-btn {
+  background-color: #e5e7eb;
+  padding: 8px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: none;
+}
+
+.dark-mode .toggle-btn {
+  background-color: #374151;
+}
+
+/* Admin Info Cards */
+.admin-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 16px;
+}
+
+.admin-card {
+  background: white;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: transform 0.2s ease-in-out;
+}
+
+.admin-card:hover {
+  transform: scale(1.05);
+}
+
+.dark-mode .admin-card {
+  background: #2d3748;
+}
+
+.card-content {
+  flex-grow: 1;
+}
+
+.label {
+  font-weight: bold;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.dark-mode .label {
+  color: #bbb;
+}
+
+.value {
+  font-size: 1rem;
+  margin-top: 4px;
+}
+
+/* Edit Button */
+.edit-btn {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 6px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.edit-btn:hover {
+  background: #1e40af;
+}

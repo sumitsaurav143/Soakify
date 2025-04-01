@@ -5,6 +5,7 @@ export const AppContext = createContext();
 const useDeviceType = () => {
   const [isMobile, setIsMobile] = useState(false);
 
+
   useEffect(() => {
     const mediaQuery = window.matchMedia("(max-width: 768px)");
     setIsMobile(mediaQuery.matches);
