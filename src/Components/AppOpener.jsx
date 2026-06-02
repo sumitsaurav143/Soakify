@@ -13,7 +13,7 @@ export const AppOpener = () => {
                     Open Soakify App For Better Experience.
                 </div>
                 <div className='right-header'>
-                    <a href="#" className="open-app-button">Open App</a>
+                    <a href="#" className="open-app-button">Open</a>
                     <a className="close-button" onClick={()=>dispatch({ type: "SET_APP_OPENER", payload: 0 })}>×</a>
                 </div>
             </div>

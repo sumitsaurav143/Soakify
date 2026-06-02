@@ -3,15 +3,17 @@ import axios from "axios";
 import { Link, Outlet, useNavigate } from "react-router-dom";
 import { useAuth } from "../../Context/AuthContext";
 import API_ENDPOINTS from "../../api";
-import "./AdminLogin.css"; 
+import Header from '../Header'
+import "./AdminLogin.css";
 
 export const AdminLogin = () => {
   const navigate = useNavigate();
 
   const [error, setError] = useState(null);
-  const [password, setPassword] = useState("");
+  const [testing, setTesting] = useState(false);
+  const [password, setPassword] = useState("Soakify@Admin4u");
   const [tfa, setTfa] = useState(false);
-  const {  id, setId, email, setEmail, authenticated, setAuthenticated } = useAuth();
+  const { id, setId, email, setEmail, authenticated, setAuthenticated } = useAuth();
 
   useEffect(() => {
     if (authenticated) {
@@ -20,41 +22,49 @@ export const AdminLogin = () => {
   }, [authenticated, navigate]);
 
   useEffect(() => {
-    if(error){
-      setTimeout(()=>setError(null),3500);
+    if (error) {
+      setTimeout(() => setError(null), 3500);
     }
   }, [error]);
 
   const loginUser = async (email, password) => {
-    try {
-      const response = await axios.post(API_ENDPOINTS.LOGIN, { email, password });
+    if (testing) {
+      setId(-1);
+      setError(null);
+      setAuthenticated(true);
+      navigate("dashboard");
+    } else {
 
-      console.log("Login Response", response.data);
-      console.log("Login Resp", response);
+      try {
+        const response = await axios.post(API_ENDPOINTS.LOGIN, { email, password });
 
-      setId(response.data.id);
+        console.log("Login Response", response.data);
+        console.log("Login Resp", response);
 
-      if (response.data.id) {
+        setId(response.data.id);
 
-        setError(null);
+        if (response.data.id) {
 
-        const tfaStatus = response.data.tfaEnabled;
-        setTfa(tfaStatus);
+          setError(null);
 
-        if (tfaStatus) {
-          navigate("tfa");
-        } else {
-          setAuthenticated(true);
-          navigate("dashboard");
+          const tfaStatus = response.data.tfaEnabled;
+          setTfa(tfaStatus);
+
+          if (tfaStatus) {
+            navigate("tfa");
+          } else {
+            setAuthenticated(true);
+            navigate("dashboard");
+          }
         }
-      }
-    } catch (error) {
-      console.error("Error Status Code: ", error.request.status);
-      if (error.request.status === 0)
-        setError('Server Error - Please contact CS team.');
+      } catch (error) {
+        console.error("Error Status Code: ", error.request.status);
+        if (error.request.status === 0)
+          setError('Server Error - Please contact CS team.');
 
-      if (error.request.status === 401)
-        setError("Invalid login/password!")
+        if (error.request.status === 401)
+          setError("Invalid login/password!")
+      }
     }
   };
 
@@ -65,11 +75,12 @@ export const AdminLogin = () => {
 
   return (
     <div className="admin-login-container">
+      <Header />
       {!authenticated ? (
         <div className="login-box">
-          <h2>Admin Login</h2>
-          
-          {error ? <p className="login-error">{error}</p>: null}
+          <h2>Admin Login <button onClick={() => setTesting(!testing)}>{+testing}</button></h2>
+
+          {error ? <p className="login-error">{error}</p> : null}
           {!tfa ? (
             <form onSubmit={handleSubmit}>
               <div className="input-group">
@@ -77,7 +88,7 @@ export const AdminLogin = () => {
                 <input
                   type="email"
                   placeholder="Enter your email"
-                  value={email}
+                  value={testing? 'testing@mail.com': email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
                 />
@@ -87,7 +98,7 @@ export const AdminLogin = () => {
                 <input
                   type="password"
                   placeholder="Enter your password"
-                  value={password}
+                  value={testing? '12345':password}
                   onChange={(e) => setPassword(e.target.value)}
                   required
                 />

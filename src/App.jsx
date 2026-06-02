@@ -2,6 +2,8 @@ import './App.css';
 import { HashRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import { AdminLogin } from './Components/Admin/AdminLogin';
 import { Homepage } from './Components/Homepage';
+import { Login } from './Components/Login';
+import { Signup } from './Components/Signup';
 import { AppProvider } from './Context/AppContext';
 import { AuthProvider, useAuth } from './Context/AuthContext';
 import { NotFound } from './Components/NotFound';
@@ -16,6 +18,8 @@ function App() {
           <Routes>
             <Route path="/" element={<Navigate to="/home" />} />
             <Route path="/home" element={<Homepage />} />
+            <Route path="/signin" element={<Login />} />
+            <Route path="/signup" element={<Signup />} />
             
             <Route path="/admin" element={<AdminLogin />}>
               <Route path="tfa" element={<OtpLogin />} />

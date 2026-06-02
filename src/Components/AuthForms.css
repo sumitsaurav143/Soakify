@@ -1,0 +1,33 @@
+/* Auth form styles consistent with homepage theme */
+.auth-page {
+  min-height: calc(100vh - 140px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 24px;
+  background: transparent;
+  position: relative;
+  padding-top: 100px; /* make room for pinned header */
+}
+.auth-card {
+  width: 420px;
+  padding: 28px;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.96);
+  border: 1px solid rgba(80,120,255,0.12);
+  box-shadow: 0 30px 90px rgba(20,60,140,0.08);
+}
+
+/* pinned brand for auth pages */
+.auth-brand { position: absolute; top: 22px; left: 20px; z-index: 40; }
+.auth-brand .brand-logo { font-size: 1.4rem; }
+.auth-card h2 { margin: 0 0 8px; color:#0f3166; }
+.auth-card p.lead { margin:0 0 18px; color:#385b86; }
+.auth-field { display:grid; gap:8px; margin-bottom:14px; }
+.auth-field label { font-size:0.92rem; color:#12345a; }
+.auth-field input { padding:12px 14px; border-radius:10px; border:1px solid rgba(60,110,255,0.12); background: #fff; }
+.auth-actions { display:flex; gap:12px; align-items:center; margin-top:8px; }
+.small-link { color:#1749b9; text-decoration:none; font-weight:600; }
+.auth-cta { margin-left:auto; }
+.social-row { display:flex; gap:8px; margin-top:12px; }
+.social-pill { padding:8px 12px; border-radius:10px; background:rgba(36,88,255,0.06); border:1px solid rgba(36,88,255,0.08); font-weight:600; }

@@ -1,92 +1,65 @@
-import React, { useState, useEffect, useContext } from 'react';
-import { AppContext } from '../Context/AppContext';
+import React from 'react';
 import './Features.css';
 
 export const Features = () => {
-
-    const { state, dispatch } = useContext(AppContext);
-
-    useEffect(() => {
-      const script = document.createElement("script");
-      script.src = "https://udbaa.com/bnr.php?section=General&pub=395968&format=728x90&ga=g"
-      script.async = true;
-      script.onload = () => {
-        // You can do something once the script is loaded
-        console.log("Script loaded successfully!");
-      };
-      document.body.appendChild(script);
-  
-      return () => {
-        document.body.removeChild(script); // Clean up the script on unmount
-      };
-    }, []);
-
   const featureItems = [
     {
-      img: '/images/quick_service.svg',
-      title: 'Quick Service',
-      description: 'Experience same-day pickup and delivery for your convenience.',
+      key: 'pickup',
+      title: 'Doorstep Pickup',
+      description: "We collect when it’s convenient.",
     },
     {
-      img: '/images/ecofriendly.svg',
-      title: 'Eco-Friendly',
-      description: 'We use eco-friendly detergents and sustainable practices.',
+      key: 'care',
+      title: 'Premium Fabric Care',
+      description: 'Gentle detergents and expert handling.',
     },
     {
-      img: '/images/pricing.svg',
-      title: 'Affordable Pricing',
-      description: 'Quality service that won’t break the bank.',
+      key: 'pricing',
+      title: 'Transparent Pricing',
+      description: 'Clear plans, no surprises.',
     },
   ];
-
-  // State to track current feature index
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  useEffect(() => {
-    // Auto-scroll every 5 seconds
-    if(state.device==="Mobile"){
-      const interval = setInterval(() => {
-        setCurrentIndex((prevIndex) => (prevIndex + 1) % featureItems.length);
-      }, 5000);
-  
-      // Cleanup the interval on component unmount
-      return () => clearInterval(interval);
-    }
-   
-  }, []);
-
-  // Function to handle manual dot click
-  const handleDotClick = (index) => {
-    setCurrentIndex(index);
-  };
 
   return (
     <section className="features">
       <div className="container">
-        <h2>Why Choose Soakify?</h2>
-        <div className="features-scroll-container">
-          <div
-            className="features-grid"
-            style={{
-              transform: `translateX(-${currentIndex * 110}%)`
-            }}
-          >
-            {featureItems.map((item, index) => (
-              <div className="feature-item" key={index}>
-                <img className="service_svg" src={item.img} alt={item.title} />
-                <h3>{item.title}</h3>
-                <p>{item.description}</p>
-              </div>
-            ))}
-          </div>
+        <div className="section-title">
+          <span>Core Benefits</span>
+          <h2>What makes Soakify different?</h2>
+          <p>Smart pickup, gentle care, and fast delivery for a laundry experience that feels effortless.</p>
         </div>
-        <div className="dots-container">
-          {featureItems.map((_, index) => (
-            <span
-              key={index}
-              className={`dot ${index === currentIndex ? 'active' : ''}`}
-              onClick={() => handleDotClick(index)}
-            ></span>
+        <div className="features-grid">
+          {featureItems.map((item, index) => (
+            <article className="feature-item" key={item.key || index}>
+              <div className="feature-icon-wrap" aria-hidden>
+                {item.key === 'pickup' && (
+                  <svg className="service_svg" width="56" height="56" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="1" y="6" width="16" height="10" rx="2" fill="#fff" stroke="#3A7BFF" strokeOpacity="0.12" />
+                    <path d="M18 10h2v4h-2z" fill="#3A7BFF" opacity="0.9" />
+                    <circle cx="6" cy="18" r="1.6" fill="#3A7BFF" />
+                    <circle cx="16" cy="18" r="1.6" fill="#3A7BFF" />
+                  </svg>
+                )}
+
+                {item.key === 'care' && (
+                  <svg className="service_svg" width="56" height="56" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2C10 6 6 8 6 12a6 6 0 0012 0c0-4-4-6-6-10z" fill="#CFF0FF" />
+                    <path d="M9 12c1 2 3 3 5 2" stroke="#2B90FF" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
+                    <circle cx="12" cy="10" r="1.6" fill="#3A7BFF" />
+                  </svg>
+                )}
+
+                {item.key === 'pricing' && (
+                  <svg className="service_svg" width="56" height="56" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="4" y="4" width="16" height="16" rx="4" fill="#EAF4FF" />
+                    <path d="M8 12h8" stroke="#3A7BFF" strokeWidth="1.6" strokeLinecap="round" />
+                    <circle cx="16.5" cy="8.5" r="1.2" fill="#3A7BFF" />
+                  </svg>
+                )}
+              </div>
+              <h3>{item.title}</h3>
+              <p>{item.description}</p>
+            </article>
           ))}
         </div>
       </div>
